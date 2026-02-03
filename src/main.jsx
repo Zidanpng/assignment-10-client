@@ -12,6 +12,9 @@ import MyOrder from "./pages/MyOrder.jsx";
 import MyList from "./pages/MyList.jsx";
 import { AuthProvider } from "./providers/AuthProvider.jsx";
 import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
+import Register from "./components/Register.jsx";
+import Login from "./components/Login.jsx";
+import UpdateProfile from "./pages/UpdateProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +52,26 @@ const router = createBrowserRouter([
             <MyOrder></MyOrder>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      // {
+      //   path: "/forgetPass",
+      //   element: <ForgetPass></ForgetPass>,
+      // },
+      {
+        path: "/update",
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
+        path: "*",
+        element: <Error></Error>,
       },
     ],
   },

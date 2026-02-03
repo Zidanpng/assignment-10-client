@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "../assets/Paw-mart-2.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoPaw } from "react-icons/io5";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="navbar bg-white shadow-sm">
@@ -47,7 +48,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-xl">
+          <a className="text-xl" onClick={() => navigate("/")}>
             <img src={logo} alt="" className="h-6 md:h-8 w-35" />
           </a>
         </div>
@@ -75,13 +76,13 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="flex gap-2">
             <Link
-              //   to="/login"
+              to="/login"
               className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
             >
               LOG IN
             </Link>
             <Link
-              //   to="/register"
+              to="/register"
               className="btn btn-sm md:btn-md  text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
             >
               REGISTER
