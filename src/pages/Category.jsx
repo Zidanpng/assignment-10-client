@@ -30,7 +30,7 @@ const Category = () => {
               onClick={() =>
                 navigate(`/category-filtered-product/${cat.route}`)
               }
-              className="flex flex-col sm:flex-row items-center justify-center gap-2 text-white border-t sm:border-t-0   sm:border-l border-white/20 hover:bg-red-700 transition-all duration-300 py-6 group"
+              className="flex flex-col lg:flex-row items-center justify-center gap-2 text-white border-r border-t sm:border-t-0 sm:border-r border-white/20 hover:bg-red-700 transition-all duration-300 py-6 group"
             >
               <span className="text-3xl group-hover:scale-110 transition-transform">
                 {cat.icon}

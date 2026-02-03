@@ -1,11 +1,12 @@
 import React from "react";
 import CategorySection from "./Category";
 import Category from "./Category";
+import Banner from "./Banner";
 
 const Home = () => {
   return (
     <div>
-      <div>ff</div>
+      <Banner></Banner>
       {/* category */}
       <Category></Category>
       <div></div>
