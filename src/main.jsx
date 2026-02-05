@@ -1,9 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
+import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App.jsx";
 import Roots from "./Layouts/Roots.jsx";
 import Home from "./pages/Home/Home.jsx";
 import PetSupply from "./pages/PetSupply/PetSupply.jsx";
@@ -16,11 +15,13 @@ import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
 import Details from "./pages/Home/Details.jsx";
+import CategoryProducts from "./pages/CategoryProducts.jsx";
+import Error from "./pages/Error.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Roots,
+    element: <Roots />,
     children: [
       {
         path: "/",
@@ -31,8 +32,12 @@ const router = createBrowserRouter([
         element: <PetSupply></PetSupply>,
       },
       {
-        path: "/details",
+        path: "/details/:id",
         element: <Details></Details>,
+      },
+      {
+        path: "/category-filtered-product/:category",
+        element: <CategoryProducts></CategoryProducts>,
       },
       {
         path: "/addList",

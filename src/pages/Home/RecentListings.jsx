@@ -36,7 +36,7 @@ const RecentListings = () => {
           </p>
         </div>
         <Link
-          to="/all-listings"
+          to="/petSupply"
           className="flex items-center gap-2 text-[#e83128] font-bold hover:gap-4 transition-all uppercase text-sm"
         >
           View All Products
@@ -44,7 +44,7 @@ const RecentListings = () => {
         </Link>
       </div>
       {/* list */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-ols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {listings.map((item) => (
           <div
             key={item._id}
@@ -54,10 +54,12 @@ const RecentListings = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-full h-full object-cover object-hover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute top-4 left-4 bg-[#0a303a] text-white text-sm font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                {item.category}
+              <div className="absolute top-4 left-4">
+                <div className="bg-[#e83128] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                  {item.type}
+                </div>
               </div>
             </div>
             {/* content */}
@@ -68,7 +70,7 @@ const RecentListings = () => {
                 </h3>
                 <div className="flex items-center text-gray-400 text-xs font-medium">
                   <IoLocationOutline className="text-[#e83128] mr-1" />
-                  {item.location.split(",")[0]}{" "}
+                  {item.location ? item.location.split(",")[0] : "Global"}{" "}
                 </div>
               </div>
               <div className="flex justify-between items-center mt-6">

@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Buddy",
+    "category": "Pet",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600",
+    "price": "Free for Adoption",
+    "location": "New York, USA",
+    "description": "A friendly and energetic dog who loves outdoor walks and family time."
+  },
+  {
+    "name": "Milo",
+    "category": "Pet",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600",
+    "price": 120,
+    "location": "Toronto, Canada",
+    "description": "A calm and curious cat perfect for apartment living."
+  },
+  {
+    "name": "Luna",
+    "category": "Pet",
+    "type": "Rabbit",
+    "image": "https://images.unsplash.com/photo-1609151354448-c4a53450c6e9?w=600",
+    "price": "Free for Adoption",
+    "location": "London, UK",
+    "description": "A gentle rabbit that enjoys quiet surroundings."
+  },
+  {
+    "name": "Charlie",
+    "category": "Pet",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=600",
+    "price": 250,
+    "location": "Sydney, Australia",
+    "description": "An intelligent and loyal dog who enjoys training."
+  },
+  {
+    "name": "Coco",
+    "category": "Pet",
+    "type": "Bird",
+    "image": "https://images.unsplash.com/photo-1555169062-013468b47731?w=600",
+    "price": 80,
+    "location": "Paris, France",
+    "description": "A colorful bird with cheerful chirping sounds."
+  },
+  {
+    "name": "Rocky",
+    "category": "Pet",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600",
+    "price": "Free for Adoption",
+    "location": "Berlin, Germany",
+    "description": "A strong and playful dog who loves exercise."
+  },
+  {
+    "name": "Bella",
+    "category": "Pet",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600",
+    "price": 150,
+    "location": "Rome, Italy",
+    "description": "An affectionate and gentle cat."
+  },
+  {
+    "name": "Max",
+    "category": "Pet",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600",
+    "price": 300,
+    "location": "Madrid, Spain",
+    "description": "An active dog who enjoys learning new tricks."
+  },
+  {
+    "name": "Daisy",
+    "category": "Pet",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=600",
+    "price": "Free for Adoption",
+    "location": "Amsterdam, Netherlands",
+    "description": "A sweet dog great with families and kids."
+  },
+  {
+    "name": "Oliver",
+    "category": "Pet",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1664299749481-ac8dc8b49754?w=600",
+    "price": 200,
+    "location": "Dubai, UAE",
+    "description": "A smart indoor cat with a calm personality."
+  },
+  {
+    "name": "Premium Dog Food",
+    "category": "Pet Food",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600",
+    "price": 45,
+    "description": "High-protein food for active dogs."
+  },
+  {
+    "name": "Grain-Free Dog Food",
+    "category": "Pet Food",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600",
+    "price": 50,
+    "description": "Perfect for dogs with sensitive stomachs."
+  },
+  {
+    "name": "Organic Cat Food",
+    "category": "Pet Food",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1604908554168-5b8b2c0b7f9d?w=600",
+    "price": 40,
+    "description": "Healthy organic food for cats."
+  },
+  {
+    "name": "Wet Cat Food",
+    "category": "Pet Food",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=600",
+    "price": 30,
+    "description": "Moist and tasty meal cats love."
+  },
+  {
+    "name": "Rabbit Pellet Mix",
+    "category": "Pet Food",
+    "type": "Rabbit",
+    "image": "https://images.unsplash.com/photo-1601758003122-78f1f7c93d5c?w=600",
+    "price": 25,
+    "description": "Balanced nutrition for rabbits."
+  },
+  {
+    "name": "Bird Seed Mix",
+    "category": "Pet Food",
+    "type": "Bird",
+    "image": "https://images.unsplash.com/photo-1555169062-013468b47731?w=600",
+    "price": 20,
+    "description": "Vitamin-rich seed mix for birds."
+  },
+  {
+    "name": "Pet Shampoo",
+    "category": "Care Product",
+    "type": "All",
+    "image": "https://images.unsplash.com/photo-1583511655936-526b0b7d2f9b?w=600",
+    "price": 20,
+    "description": "Gentle shampoo for all pets."
+  },
+  {
+    "name": "Flea & Tick Spray",
+    "category": "Care Product",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600",
+    "price": 25,
+    "description": "Protection from fleas and ticks."
+  },
+  {
+    "name": "Grooming Brush",
+    "category": "Care Product",
+    "type": "All",
+    "image": "https://images.unsplash.com/photo-1622278647429-71bc97e904e8?w=600",
+    "price": 18,
+    "description": "Removes loose fur easily."
+  },
+  {
+    "name": "Dental Chews",
+    "category": "Care Product",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600",
+    "price": 22,
+    "description": "Improves dental hygiene."
+  },
+  {
+    "name": "Cat Litter Deodorizer",
+    "category": "Care Product",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1619983081563-430f63602796?w=600",
+    "price": 15,
+    "description": "Controls litter box odor."
+  },
+  {
+    "name": "Pet Nail Clipper",
+    "category": "Care Product",
+    "type": "All",
+    "image": "https://images.unsplash.com/photo-1601758123927-196b4be35a63?w=600",
+    "price": 12,
+    "description": "Safe nail trimming tool."
+  },
+  {
+    "name": "Dog Leash",
+    "category": "Accessory",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600",
+    "price": 15,
+    "description": "Durable leash for daily walks."
+  },
+  {
+    "name": "Dog Collar",
+    "category": "Accessory",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?w=600",
+    "price": 18,
+    "description": "Adjustable and comfortable collar."
+  },
+  {
+    "name": "Cat Scratching Post",
+    "category": "Accessory",
+    "type": "Cat",
+    "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=600",
+    "price": 35,
+    "description": "Keeps cats active and furniture safe."
+  },
+  {
+    "name": "Pet Bed",
+    "category": "Accessory",
+    "type": "All",
+    "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600",
+    "price": 45,
+    "description": "Soft and cozy sleeping bed."
+  },
+  {
+    "name": "Pet Travel Carrier",
+    "category": "Accessory",
+    "type": "All",
+    "image": "https://images.unsplash.com/photo-1622278647429-71bc97e904e8?w=600",
+    "price": 60,
+    "description": "Safe and comfortable travel carrier."
+  },
+  {
+    "name": "Dog Toy Ball",
+    "category": "Accessory",
+    "type": "Dog",
+    "image": "https://images.unsplash.com/photo-1601758173923-0b1c6b97b3c1?w=600",
+    "price": 10,
+    "description": "Fun toy for play and exercise."
+  }
+]

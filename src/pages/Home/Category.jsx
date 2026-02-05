@@ -7,10 +7,10 @@ const Category = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { name: "Pets", icon: <FaDog />, route: "Dog" },
+    { name: "Pets", icon: <FaDog />, route: "Pet" },
     { name: "Pet Food", icon: <FaBone />, route: "Pet Food" },
-    { name: "Accessories", icon: <FaCogs />, route: "Accessories" },
-    { name: "Care Products", icon: <FaMedkit />, route: "Care Products" },
+    { name: "Accessories", icon: <FaCogs />, route: "Accessory" },
+    { name: "Care Products", icon: <FaMedkit />, route: "Care Product" },
   ];
   return (
     <div className="max-w-7xl mx-auto px-4 mt-10">

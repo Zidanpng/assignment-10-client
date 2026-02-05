@@ -28,23 +28,25 @@ const Navbar = () => {
               </svg>
             </div>
             <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-[#f5f0ea] rounded-box z-1 mt-3 w-52 p-2 shadow text-gray-800"
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-[#f5f0ea] rounded-box z-50 mt-3 w-52 p-2 shadow text-gray-800"
             >
               <li>
-                <a className="bg-[#e83128]">Home</a>
+                <NavLink to="/" className="bg-[#e83128]">
+                  Home
+                </NavLink>
               </li>
               <li>
-                <a>Pets & Supplies</a>
+                <NavLink to="/petSupply">Pets & Supplies</NavLink>
               </li>
               <li>
-                <a>Add Listing</a>
+                <NavLink to="/addList">Add Listing</NavLink>
               </li>
               <li>
-                <a>My Listings</a>
+                <NavLink to="/myList">My Listings</NavLink>
               </li>
               <li>
-                <a>My Orders</a>
+                <NavLink to="/myOrder">My Orders</NavLink>
               </li>
             </ul>
           </div>
