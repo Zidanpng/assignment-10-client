@@ -7,7 +7,7 @@ const Category = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { name: "Pets", icon: <FaDog />, route: "Pets" },
+    { name: "Pets", icon: <FaDog />, route: "Dog" },
     { name: "Pet Food", icon: <FaBone />, route: "Pet Food" },
     { name: "Accessories", icon: <FaCogs />, route: "Accessories" },
     { name: "Care Products", icon: <FaMedkit />, route: "Care Products" },

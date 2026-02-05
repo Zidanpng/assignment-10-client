@@ -5,16 +5,17 @@ import { RouterProvider } from "react-router/dom";
 import "./index.css";
 import App from "./App.jsx";
 import Roots from "./Layouts/Roots.jsx";
-import Home from "./pages/Home.jsx";
-import PetSupply from "./pages/PetSupply.jsx";
-import AddList from "./pages/AddList.jsx";
-import MyOrder from "./pages/MyOrder.jsx";
-import MyList from "./pages/MyList.jsx";
+import Home from "./pages/Home/Home.jsx";
+import PetSupply from "./pages/PetSupply/PetSupply.jsx";
+import AddList from "./pages/AddList/AddList.jsx";
+import MyOrder from "./pages/MyOrder/MyOrder.jsx";
+import MyList from "./pages/MyList/MyList.jsx";
 import { AuthProvider } from "./providers/AuthProvider.jsx";
 import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
 import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
+import Details from "./pages/Home/Details.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/petSupply",
         element: <PetSupply></PetSupply>,
+      },
+      {
+        path: "/details",
+        element: <Details></Details>,
       },
       {
         path: "/addList",

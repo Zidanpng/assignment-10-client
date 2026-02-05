@@ -1,15 +1,14 @@
 import React from "react";
-import CategorySection from "./Category";
-import Category from "./Category";
 import Banner from "./Banner";
+import Category from "./Category";
+import RecentListings from "./RecentListings";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      {/* category */}
       <Category></Category>
-      <div></div>
+      <RecentListings></RecentListings>
     </div>
   );
 };
