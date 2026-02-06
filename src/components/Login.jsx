@@ -37,8 +37,8 @@ const Login = () => {
       .catch((err) => toast.error(err.message));
   };
   return (
-    <div className="flex items-center justify-center px-4 bg-gray-50 min-h-screen">
-      <div className="max-w-md w-full bg-white shadow-2xl rounded-xl p-10 border border-gray-100">
+    <div className="flex items-center justify-center px-2 bg-gray-50 min-h-screen">
+      <div className="max-w-md w-full bg-white shadow-2xl rounded-xl p-6 border border-gray-100">
         <h1 className="text-2xl text-center text-[#0a303a] font-bold pb-3">
           Please <span className="text-[#e83128]">Login</span>
         </h1>
