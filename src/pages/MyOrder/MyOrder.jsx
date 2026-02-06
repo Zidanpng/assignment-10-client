@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const MyOrder = () => {
   const [orders, setOrders] = useState([]);
-  const email = "user@example.com";
+  const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/my-orders/${email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setOrders(data);
-      });
-  }, []);
+    if (user?.email) {
+      fetch(`http://localhost:5000/my-orders/${user.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setOrders(data);
+        });
+    }
+  }, [user]);
   return (
     <div className="max-w-5xl mx-auto p-6">
       <h2 className="text-3xl font-black text-slate-800 mb-6">
-        MY <span className="text-red-600">ORDERS</span>
+        MY <span className="text-[#e83128]">ORDERS</span>
       </h2>
       <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
         <table className="w-full text-left border-collapse">
