@@ -15,7 +15,6 @@ const MyOrder = () => {
       <h2 className="text-3xl font-black text-slate-800 mb-6">
         MY <span className="text-red-600">ORDERS</span>
       </h2>
-
       <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
         <table className="w-full text-left border-collapse">
           <thead className="bg-gray-50">
@@ -49,7 +48,6 @@ const MyOrder = () => {
             ))}
           </tbody>
         </table>
-
         {orders.length === 0 && (
           <div className="p-8 text-center text-gray-500">No orders found.</div>
         )}
