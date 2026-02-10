@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const MyOrder = () => {
   const [orders, setOrders] = useState([]);
@@ -14,8 +15,8 @@ const MyOrder = () => {
     }
   }, [user]);
   return (
-    <div className="max-w-5xl mx-auto p-6">
-      <h2 className="text-3xl font-black text-slate-800 mb-6">
+    <div className="max-w-7xl mx-auto px-4 py-10">
+      <h2 className="text-4xl font-black text-[#0a303a] mb-8 uppercase">
         MY <span className="text-[#e83128]">ORDERS</span>
       </h2>
       <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
@@ -52,7 +53,15 @@ const MyOrder = () => {
           </tbody>
         </table>
         {orders.length === 0 && (
-          <div className="p-8 text-center text-gray-500">No orders found.</div>
+          <div className="p-8 text-center text-gray-500">
+            No orders found.{" "}
+            <Link
+              to="/petSupply"
+              className="text-red-500 hover:text-red-700 font-semibold"
+            >
+              Order?
+            </Link>
+          </div>
         )}
       </div>
     </div>

@@ -77,7 +77,7 @@ const Register = () => {
               type="name"
               name="name"
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
-              placeholder="name"
+              placeholder="NAME"
             />
           </div>
           <div className="relative">
@@ -85,14 +85,14 @@ const Register = () => {
               type="text"
               name="photo"
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
-              placeholder="Photo URL"
+              placeholder="PHOTO URL"
               required
             />
           </div>
           <div className="relative">
             <input
               type="email"
-              placeholder="email"
+              placeholder="EMAIL"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
@@ -102,7 +102,7 @@ const Register = () => {
             {" "}
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Password"
+              placeholder="PASSWORD"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"

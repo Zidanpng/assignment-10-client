@@ -82,20 +82,13 @@ const AddList = () => {
           {/* {type dropdown} */}
           <div>
             <label className="label font-medium text-gray-800 mb-1">Type</label>
-            <select
-              defaultValue={""}
+            <input
+              type="text"
               name="type"
               required
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
-            >
-              <option value="" disabled>
-                Select type
-              </option>
-              <option value="Dog">Dog</option>
-              <option value="Cat">Cat</option>
-              <option value="Bird">Bird</option>
-              <option value="Other">Other</option>
-            </select>
+              placeholder="Enter Type"
+            />
           </div>
 
           {/* image URL */}

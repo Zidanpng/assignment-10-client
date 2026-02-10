@@ -30,7 +30,7 @@ const PetSupply = () => {
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h2 className="text-4xl font-black text-[#0a303a] mb-8 uppercase">
-          Pet <span className="text-[#e83128]">Supplies</span>
+          Pets & <span className="text-[#e83128]">Supplies</span>
         </h2>
         <input
           type="text"
