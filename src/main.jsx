@@ -17,6 +17,7 @@ import UpdateProfile from "./pages/UpdateProfile.jsx";
 import Details from "./pages/Home/Details.jsx";
 import CategoryProducts from "./pages/CategoryProducts.jsx";
 import Error from "./pages/Error.jsx";
+import UpdateList from "./pages/MyList/UpdateList.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/myList",
         element: <MyList></MyList>,
+      },
+      {
+        path: "/updateList/:id",
+        element: <UpdateList></UpdateList>,
       },
       {
         path: "/myOrder",
