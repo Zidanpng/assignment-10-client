@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../assets/Paw-mart-2.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoPaw } from "react-icons/io5";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
     <div>
@@ -76,20 +78,51 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="flex gap-2">
-            <Link
-              to="/login"
-              className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
-            >
-              LOG IN
-            </Link>
-            <Link
-              to="/register"
-              className="btn btn-sm md:btn-md  text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
-            >
-              REGISTER
-            </Link>
-          </div>
+          {user && user?.email ? (
+            <div className="flex items-center gap-3">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user?.displayName || "User"}
+              >
+                <div className="avatar">
+                  <Link
+                    to="/profile"
+                    className="w-10 rounded-full ring ring-[#e83128] ring-offset-2 block overflow-hidden shadow-md"
+                  >
+                    <img
+                      src={
+                        user?.photoURL ||
+                        "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                      }
+                      alt=""
+                    />
+                  </Link>
+                </div>
+              </div>
+              <button
+                onClick={logOut}
+                className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
+              >
+                LOG OUT
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-2">
+              <Link
+                to="/login"
+                className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
+              >
+                LOG IN
+              </Link>
+              <Link
+                to="/register"
+                className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
+              >
+                REGISTER
+              </Link>
+            </div>
+          )}
+          <div></div>
         </div>
       </div>
     </div>

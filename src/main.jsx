@@ -5,12 +5,11 @@ import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import Roots from "./Layouts/Roots.jsx";
 import Home from "./pages/Home/Home.jsx";
-import PetSupply from "./pages/PetSupply/PetSupply.jsx";
+
 import AddList from "./pages/AddList/AddList.jsx";
 import MyOrder from "./pages/MyOrder/MyOrder.jsx";
 import MyList from "./pages/MyList/MyList.jsx";
 import { AuthProvider } from "./providers/AuthProvider.jsx";
-import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
 import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
 import UpdateProfile from "./pages/UpdateProfile.jsx";
@@ -18,6 +17,9 @@ import Details from "./pages/Home/Details.jsx";
 import CategoryProducts from "./pages/CategoryProducts.jsx";
 import Error from "./pages/Error.jsx";
 import UpdateList from "./pages/MyList/UpdateList.jsx";
+import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
+import PetSupply from "./pages/PetSupply/PetSupply.jsx";
+import Profile from "./pages/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,32 +31,60 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/petSupply",
-        element: <PetSupply></PetSupply>,
+        path: "/PetSupply",
+        element: (
+          <PrivateRoute>
+            <PetSupply></PetSupply>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/category-filtered-product/:category",
-        element: <CategoryProducts></CategoryProducts>,
+        element: (
+          <PrivateRoute>
+            <CategoryProducts></CategoryProducts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addList",
-        element: <AddList></AddList>,
+        element: (
+          <PrivateRoute>
+            <AddList></AddList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myList",
-        element: <MyList></MyList>,
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updateList/:id",
-        element: <UpdateList></UpdateList>,
+        element: (
+          <PrivateRoute>
+            <UpdateList></UpdateList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myOrder",
-        element: <MyOrder></MyOrder>,
+        element: (
+          <PrivateRoute>
+            <MyOrder></MyOrder>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -69,8 +99,20 @@ const router = createBrowserRouter([
       //   element: <ForgetPass></ForgetPass>,
       // },
       {
-        path: "/update",
-        element: <UpdateProfile></UpdateProfile>,
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "*",
