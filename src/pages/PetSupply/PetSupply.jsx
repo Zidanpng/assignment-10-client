@@ -70,7 +70,9 @@ const PetSupply = () => {
                 {item.category}
               </span>
               <h3 className="font-bold text-lg text-[#0a303a]">{item.name}</h3>
-              <p className="text-[#0a303a] font-black mt-2">${item.price}</p>
+              <p className="text-[#e83128] font-black mt-2">
+                {item.Price === 0 ? "FREE" : `$${item.Price}`}
+              </p>
               <Link
                 to={`/details/${item._id}`}
                 className="block text-center mt-4 bg-[#0a303a] text-white py-2 rounded-lg text-sm hover:bg-[#e83128] transition-colors"

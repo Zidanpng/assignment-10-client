@@ -31,7 +31,7 @@ const Details = () => {
       buyerName: user?.displayName,
       email: user?.email,
       quantity: isPet ? 1 : parseInt(form.quantity.value),
-      price: item.price,
+      price: item.Price,
       address: form.address.value,
       date: form.date.value,
       phone: form.phone.value,
@@ -152,7 +152,7 @@ const Details = () => {
                       </label>
                       <input
                         type="text"
-                        value={`$${item.price}`}
+                        value={`$${item.Price}`}
                         readOnly
                         className="input input-bordered w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs"
                       />

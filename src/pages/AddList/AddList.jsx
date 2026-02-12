@@ -154,9 +154,7 @@ const AddList = () => {
 
           {/* date */}
           <div>
-            <label className="label font-medium text-gray-800 mb-1">
-              Pick Up Date
-            </label>
+            <label className="label font-medium text-gray-800 mb-1">Date</label>
             <input
               type="date"
               name="date"
