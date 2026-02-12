@@ -66,7 +66,7 @@ const Footer = () => {
         </nav>
       </footer>
       <aside className="bg-[#0a303a]">
-        <p className="text-gray-300 px-20 py-4">
+        <p className="text-gray-300 px-4 sm:8 md:px14 lg:px-20 py-4">
           Copyright © {new Date().getFullYear()} - All right reserved by PAW
           MART.CO Industries Ltd
         </p>

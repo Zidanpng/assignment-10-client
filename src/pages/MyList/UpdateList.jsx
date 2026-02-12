@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const UpdateList = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:5000/details/${id}`)
@@ -22,7 +22,7 @@ const UpdateList = () => {
       category: form.category.value,
       type: form.type.value,
       image: form.image.value,
-      price: form.price.value,
+      price: parseFloat(form.price.value),
       location: form.location.value,
       description: form.description.value,
     };
@@ -34,7 +34,7 @@ const UpdateList = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
+        if (data.modifiedCount > 0 || data.matchedCount > 0) {
           toast.success("Listing Updated!");
           navigate("/myList");
         }
@@ -83,6 +83,17 @@ const UpdateList = () => {
               className="w-full px-5 py-3 rounded-md bg-gray-50 border border-gray-200 text-sm"
             />
           </div>
+        </div>
+        <div>
+          <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1">
+            Type
+          </label>
+          <input
+            type="text"
+            name="type"
+            defaultValue={product?.type}
+            className="w-full px-5 py-3 rounded-md bg-gray-50 border border-gray-200 text-sm"
+          />
         </div>
 
         {/* Image URL */}

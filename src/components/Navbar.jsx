@@ -34,7 +34,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-[#f5f0ea] rounded-box z-50 mt-3 w-52 p-2 shadow text-gray-800"
             >
               <li>
-                <NavLink to="/" className="bg-[#e83128]">
+                <NavLink to="/" className="">
                   Home
                 </NavLink>
               </li>
@@ -52,14 +52,14 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-xl" onClick={() => navigate("/")}>
+          <Link className="text-xl" onClick={() => navigate("/")}>
             <img src={logo} alt="" className="h-6 md:h-8 w-35" />
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-black">
+          <ul className="menu menu-horizontal px-1 text-black gap-3">
             <li>
-              <NavLink to="/" className="bg-[#e83128]">
+              <NavLink to="/" className="">
                 Home
               </NavLink>
             </li>

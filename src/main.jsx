@@ -20,6 +20,7 @@ import UpdateList from "./pages/MyList/UpdateList.jsx";
 import PrivateRoute from "./privateRoute/PrivateRoute.jsx";
 import PetSupply from "./pages/PetSupply/PetSupply.jsx";
 import Profile from "./pages/Profile.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/PetSupply",
-        element: (
-          <PrivateRoute>
-            <PetSupply></PetSupply>
-          </PrivateRoute>
-        ),
+        element: <PetSupply></PetSupply>,
       },
       {
         path: "/details/:id",
@@ -114,17 +111,18 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "*",
-        element: <Error></Error>,
-      },
     ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
+      <Toaster position="top-center"></Toaster>
       <RouterProvider router={router} />
     </AuthProvider>
   </StrictMode>,

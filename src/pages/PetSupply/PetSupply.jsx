@@ -51,19 +51,14 @@ const PetSupply = () => {
           </button>
         ))}
       </div>
-      {/* <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filteredItems.map((item) => (
-          <ProductCard key={item._id} item={item}></ProductCard>
-        ))}
-      </div> */}
 
       {loading ? (
         <div className="text-center py-20">Loading Supplies...</div>
-      ) : (
+      ) : filteredItems.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {products.map((item) => (
+          {filteredItems.map((item) => (
             <div
-              key={item.id}
+              key={item._id}
               className="border rounded-2xl p-4 hover:shadow-lg transition-shadow"
             >
               <img
@@ -84,6 +79,13 @@ const PetSupply = () => {
               </Link>
             </div>
           ))}
+        </div>
+      ) : (
+        <div className="text-center py-20">
+          <h3 className="text-2xl font-bold text-gray-400">
+            No items found matching "{searchQuery}"
+          </h3>
+          <p className="text-gray-400">Try a different name or category.</p>
         </div>
       )}
     </div>

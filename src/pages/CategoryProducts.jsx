@@ -64,9 +64,7 @@ const CategoryProducts = () => {
                 </div>
                 <div className="flex justify-between items-center border-t pt-4">
                   <span className="text-xl font-black text-[#e83128]">
-                    {typeof item.price === "number"
-                      ? `$${item.price}`
-                      : item.price}
+                    {item.Price === 0 ? "FREE" : `$${item.Price}`}
                   </span>
                   <Link
                     to={`/details/${item._id}`}

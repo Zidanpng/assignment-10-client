@@ -44,6 +44,13 @@ const MyOrder = () => {
                 <td className="p-4">{order.category}</td>
                 <td className="p-4 font-bold text-gray-700">${order.price}</td>
                 <td className="p-4">
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-bold ${order.status === "Pending" ? "bg-orange-100 text-orange-600" : "bg-green-100 text-green-600"}`}
+                  >
+                    {order.status || "Pending"}
+                  </span>
+                </td>
+                <td className="p-4">
                   <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold">
                     {order.status}
                   </span>

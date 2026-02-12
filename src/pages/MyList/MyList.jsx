@@ -33,7 +33,7 @@ const MyList = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.deleteCount > 0) {
+            if (data.deletedCount > 0) {
               toast.success("Listing deleted");
               setListings((prev) => prev.filter((item) => item._id !== id));
             }
@@ -76,7 +76,7 @@ const MyList = () => {
 
               <div className="p-6 space-y-4">
                 <h3 className="text-[#0a303a] font-black text-lg">
-                  \{item.name}
+                  {item.name}
                 </h3>
                 <p className="text-[#e83128] font-black text-xl">
                   ${item.price}

@@ -78,10 +78,8 @@ const RecentListings = () => {
                   <span className="text-sm text-gray-400 font-bold uppercase">
                     Price
                   </span>
-                  <span className="text-xl font-black text-[#0a303a]">
-                    {typeof item.price === "number"
-                      ? `$${item.price}`
-                      : item.price}
+                  <span className="text-xl font-black text-[#e83128]">
+                    {item.Price === 0 ? "FREE" : `$${item.Price}`}
                   </span>
                 </div>
                 <Link

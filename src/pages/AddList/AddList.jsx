@@ -1,9 +1,20 @@
-import { use } from "react";
+import { use, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const AddList = () => {
   const { user } = use(AuthContext);
+  const [category, setCategory] = useState("Pet");
+  const [price, setPrice] = useState(0);
+
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    setCategory(selectedCategory);
+
+    if (selectedCategory === "Pet") {
+      setPrice(0);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,13 +22,14 @@ const AddList = () => {
 
     const formData = {
       name: form.name.value,
-      category: form.category.value,
+      category: category,
       type: form.type.value,
       image: form.image.value,
-      price: form.price.value,
+      price: parseFloat(price),
       location: form.location.value,
       description: form.description.value,
-      created_by: user?.email,
+      date: form.date.value,
+      email: user?.email,
     };
 
     fetch("http://localhost:5000/add-listing", {
@@ -65,8 +77,9 @@ const AddList = () => {
               Category
             </label>
             <select
-              defaultValue={""}
               name="category"
+              value={category}
+              onChange={handleCategoryChange}
               required
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
             >
@@ -110,12 +123,19 @@ const AddList = () => {
               Price
             </label>
             <input
-              type="text"
-              name="price"
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              disabled={category === "Pet"}
               required
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
               placeholder="Enter Price"
             />
+            {category === "Pet" && (
+              <p className="text-xs text-green-600 mt-1">
+                Pets are listed for free adoption.
+              </p>
+            )}
           </div>
 
           {/* location */}
@@ -129,6 +149,33 @@ const AddList = () => {
               required
               className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
               placeholder="Enter location"
+            />
+          </div>
+
+          {/* date */}
+          <div>
+            <label className="label font-medium text-gray-800 mb-1">
+              Pick Up Date
+            </label>
+            <input
+              type="date"
+              name="date"
+              required
+              className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
+            />
+          </div>
+          {/* email */}
+          <div>
+            <label className="label font-medium text-gray-800 mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              value={user?.email}
+              readOnly
+              name="email"
+              required
+              className="w-full px-5 py-4 rounded-md bg-white border border-gray-300 text-gray-400 focus:ring-2 focus:ring-black focus:text-gray-600 outline-none transition-all placeholder:text-gray-400 font-bold text-xs tracking-widest"
             />
           </div>
 
