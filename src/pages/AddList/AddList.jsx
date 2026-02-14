@@ -6,6 +6,7 @@ const AddList = () => {
   const { user } = use(AuthContext);
   const [category, setCategory] = useState("Pet");
   const [price, setPrice] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const handleCategoryChange = (e) => {
     const selectedCategory = e.target.value;
@@ -32,7 +33,7 @@ const AddList = () => {
       email: user?.email,
     };
 
-    fetch("http://localhost:5000/add-listing", {
+    fetch("https://assignment-10-server-woad-six.vercel.app/add-listing", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

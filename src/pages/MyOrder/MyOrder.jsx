@@ -2,21 +2,30 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Loading from "../../components/Loading";
 
 const MyOrder = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
 
   const fetchOrders = () => {
     if (user?.email) {
-      fetch(`http://localhost:5000/my-orders/${user.email}`)
+      setLoading(true);
+      fetch(
+        `https://assignment-10-server-woad-six.vercel.app/my-orders/${user.email}`,
+      )
         .then((res) => res.json())
-        .then((data) => setOrders(data));
+        .then((data) => {
+          setOrders(data);
+          setLoading(false);
+        })
+        .catch(() => setLoading(false));
     }
   };
   useEffect(() => {
     fetchOrders();
-  }, [user]);
+  }, [user?.email]);
 
   const handleDeleteOrder = (id) => {
     Swal.fire({
@@ -29,7 +38,9 @@ const MyOrder = () => {
       confirmButtonText: "Yes, cancel it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/order/${id}`, { method: "DELETE" })
+        fetch(`https://assignment-10-server-woad-six.vercel.app/order/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -45,6 +56,9 @@ const MyOrder = () => {
       }
     });
   };
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
       <h2 className="text-4xl font-black text-[#0a303a] mb-8 uppercase">
@@ -75,7 +89,9 @@ const MyOrder = () => {
                     {order.productName}
                   </span>
                 </td>
-                <td className="p-4 text-gray-700">{order.category}</td>
+                <td className="p-4 text-gray-700 font-semibold">
+                  {order.category}
+                </td>
                 <td className="p-4 font-bold text-gray-700">
                   ${order.price || order.Price || 0}
                 </td>

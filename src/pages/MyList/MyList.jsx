@@ -4,16 +4,25 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Loading from "../../components/Loading";
 
 const MyList = () => {
   const { user } = useContext(AuthContext);
   const [listings, setListings] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/my-listings/${user.email}`)
+      setLoading(true);
+      fetch(
+        `https://assignment-10-server-woad-six.vercel.app/my-listings/${user.email}`,
+      )
         .then((res) => res.json())
-        .then((data) => setListings(data));
+        .then((data) => {
+          setListings(data);
+          setLoading(false);
+        })
+        .catch(() => setLoading(false));
     }
   }, [user?.email]);
 
@@ -28,9 +37,12 @@ const MyList = () => {
       confirmButtonText: "Yes,delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delete-listing/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assignment-10-server-woad-six.vercel.app/listing/${id}`,
+          {
+            method: "DELETE",
+          },
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -41,6 +53,10 @@ const MyList = () => {
       }
     });
   };
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
       <h1 className="text-4xl font-black text-[#0a303a] mb-8 uppercase">
@@ -69,7 +85,7 @@ const MyList = () => {
                   alt={item.name}
                   className="w-full h-52 object-cover"
                 />
-                <span className="absolute top-4 left-4 bg-[#e83128] text-[#0a303a] px-3 py-1 rounded-full text-[10px] uppercase">
+                <span className="absolute top-4 left-4 bg-[#e83128] font-semibold text-white px-3 py-1 rounded-full text-[10px] uppercase">
                   {item.type}
                 </span>
               </div>
@@ -79,7 +95,9 @@ const MyList = () => {
                   {item.name}
                 </h3>
                 <p className="text-[#e83128] font-black text-xl">
-                  ${item.price}
+                  {item.Price === 0 || item.price === 0
+                    ? "FREE"
+                    : `$${item.Price || item.price}`}
                 </p>
 
                 <div className="flex justify-between items-center pt-4 border-t border-gray-100">

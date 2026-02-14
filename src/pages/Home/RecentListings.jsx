@@ -8,7 +8,7 @@ const RecentListings = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recent-listings")
+    fetch("https://assignment-10-server-woad-six.vercel.app/recent-listings")
       .then((res) => res.json())
       .then((data) => {
         setListings(data);
@@ -79,7 +79,9 @@ const RecentListings = () => {
                     Price
                   </span>
                   <span className="text-xl font-black text-[#e83128]">
-                    {item.Price === 0 ? "FREE" : `$${item.Price}`}
+                    {item.Price === 0 || item.price === 0
+                      ? "FREE"
+                      : `$${item.Price || item.price}`}
                   </span>
                 </div>
                 <Link

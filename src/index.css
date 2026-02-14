@@ -1,16 +1,27 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+.dropdown .btn-ghost:focus,
+.dropdown .btn-ghost:active {
+  background-color: transparent !important;
+  outline: none !important;
+}
+
+.menu li > a:focus,
+.menu li > a:active,
+.menu li > *:focus {
+  background-color: transparent !important;
+  color: #e83128 !important;
+}
+
 .menu li a.active {
   background-color: #e83128 !important;
   color: white !important;
 }
-.menu li a.hover {
-  background-color: #fceaea;
-  color: #e83128;
-}
-.menu li a.hover {
-  font-weight: 700;
+
+.menu li a:hover {
+  background-color: #fceaea !important;
+  color: #e83128 !important;
 }
 
 @media (max-width: 768px) {

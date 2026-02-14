@@ -8,7 +8,7 @@ const UpdateList = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(`https://assignment-10-server-woad-six.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [id]);
@@ -27,11 +27,14 @@ const UpdateList = () => {
       description: form.description.value,
     };
 
-    fetch(`http://localhost:5000/update-listing/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedData),
-    })
+    fetch(
+      `https://assignment-10-server-woad-six.vercel.app/update-listing/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedData),
+      },
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0 || data.matchedCount > 0) {

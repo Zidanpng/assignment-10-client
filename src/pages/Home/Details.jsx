@@ -14,7 +14,7 @@ const Details = () => {
   const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(`https://assignment-10-server-woad-six.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [id]);
@@ -37,7 +37,7 @@ const Details = () => {
       phone: form.phone.value,
       additionalNotes: form.notes.value,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://assignment-10-server-woad-six.vercel.app/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderData),

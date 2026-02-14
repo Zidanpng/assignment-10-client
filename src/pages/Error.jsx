@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 const Error = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full bg-white">
       <div className="px-8 mx-auto">
         {/* header */}
         <div>

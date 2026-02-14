@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import logo from "../assets/Paw-mart-2.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { IoPaw } from "react-icons/io5";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {

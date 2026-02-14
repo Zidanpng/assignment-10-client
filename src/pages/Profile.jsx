@@ -1,17 +1,14 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Loading from "../components/Loading";
 
 const Profile = () => {
   const navigate = useNavigate();
   const { user, loading } = useContext(AuthContext);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex justify-center items-center bg-blue-50">
-        <span className="loading loading-spinner loading-lg text-red-600"></span>
-      </div>
-    );
+    return <Loading></Loading>;
   }
   if (!user) {
     navigate("/login");

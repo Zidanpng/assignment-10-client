@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import Error from "./Error";
+import Loading from "../components/Loading";
 
 const CategoryProducts = () => {
   const { category } = useParams();
@@ -11,7 +12,9 @@ const CategoryProducts = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/category-filtered-product/${category}`)
+    fetch(
+      `https://assignment-10-server-woad-six.vercel.app/category-filtered-product/${category}`,
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log("Data received from Backend:", data); // Log 2
@@ -25,11 +28,7 @@ const CategoryProducts = () => {
   }, [category]);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-[60vh]">
-        <span className="loading loading-spinner loading-lg text-[#e83128]"></span>
-      </div>
-    );
+    return <Loading></Loading>;
   }
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -64,7 +63,9 @@ const CategoryProducts = () => {
                 </div>
                 <div className="flex justify-between items-center border-t pt-4">
                   <span className="text-xl font-black text-[#e83128]">
-                    {item.Price === 0 ? "FREE" : `$${item.Price}`}
+                    {item.Price === 0 || item.price === 0
+                      ? "FREE"
+                      : `$${item.Price || item.price}`}
                   </span>
                   <Link
                     to={`/details/${item._id}`}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../../components/Loading";
 
 const PetSupply = () => {
   const [products, setProducts] = useState([]);
@@ -13,8 +14,8 @@ const PetSupply = () => {
     setLoading(true);
     const url =
       activeCat === "All"
-        ? "http://localhost:5000/all-listings"
-        : `http://localhost:5000/category-filtered-product/${activeCat}`;
+        ? "https://assignment-10-server-woad-six.vercel.app/all-listings"
+        : `https://assignment-10-server-woad-six.vercel.app/category-filtered-product/${activeCat}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -53,13 +54,13 @@ const PetSupply = () => {
       </div>
 
       {loading ? (
-        <div className="text-center py-20">Loading Supplies...</div>
+        <Loading></Loading>
       ) : filteredItems.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredItems.map((item) => (
             <div
               key={item._id}
-              className="border rounded-2xl p-4 hover:shadow-lg transition-shadow"
+              className="border-2 border-gray-100 rounded-2xl p-4 hover:shadow-lg transition-shadow"
             >
               <img
                 src={item.image}
@@ -71,7 +72,9 @@ const PetSupply = () => {
               </span>
               <h3 className="font-bold text-lg text-[#0a303a]">{item.name}</h3>
               <p className="text-[#e83128] font-black mt-2">
-                {item.Price === 0 ? "FREE" : `$${item.Price}`}
+                {item.Price === 0 || item.price === 0
+                  ? "FREE"
+                  : `$${item.Price || item.price}`}
               </p>
               <Link
                 to={`/details/${item._id}`}
