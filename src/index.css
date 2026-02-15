@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: light, dark;
+}
 
 .dropdown .btn-ghost:focus,
 .dropdown .btn-ghost:active {
@@ -28,5 +30,18 @@
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
+  }
+}
+
+@media print {
+  nav,
+  footer,
+  .no-print,
+  .btn {
+    display: none !important;
+  }
+  .print-container {
+    display: block !important;
+    width: 100%;
   }
 }

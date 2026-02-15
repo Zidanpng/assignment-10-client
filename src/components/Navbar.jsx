@@ -1,11 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../assets/Paw-mart-2.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <div>
       <div className="navbar bg-white shadow-sm">
@@ -76,17 +87,17 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end gap-1 md:gap-3">
           {user && user?.email ? (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <div
-                className="tooltip tooltip-bottom"
+                className="tooltip tooltip-left md:tooltip-bottom"
                 data-tip={user?.displayName || "User"}
               >
                 <div className="avatar">
                   <Link
                     to="/profile"
-                    className="w-10 rounded-full ring ring-[#e83128] ring-offset-2 block overflow-hidden shadow-md"
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full ring ring-[#e83128] ring-offset-2 block overflow-hidden shadow-md"
                   >
                     <img
                       src={
@@ -100,16 +111,16 @@ const Navbar = () => {
               </div>
               <button
                 onClick={logOut}
-                className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
+                className="btn btn-xs sm:btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
               >
                 LOG OUT
               </button>
             </div>
           ) : (
-            <div className="flex gap-2">
+            <div className="flex gap-1 md:gap-2">
               <Link
                 to="/login"
-                className="btn btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
+                className="btn btn-xs sm:btn-sm md:btn-md text-white bg-gradient-to-br from-[#e83128] to-red-400 hover:scale-105 transition-transform border-none"
               >
                 LOG IN
               </Link>
@@ -121,7 +132,12 @@ const Navbar = () => {
               </Link>
             </div>
           )}
-          <div></div>
+          <button
+            onClick={toggleTheme}
+            className="btn btn-ghost btn-xs sm:btn-sm btn-circle"
+          >
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
         </div>
       </div>
     </div>

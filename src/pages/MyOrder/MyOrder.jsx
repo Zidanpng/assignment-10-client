@@ -27,6 +27,10 @@ const MyOrder = () => {
     fetchOrders();
   }, [user?.email]);
 
+  const handlePDF = () => {
+    window.print();
+  };
+
   const handleDeleteOrder = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -61,9 +65,17 @@ const MyOrder = () => {
   }
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <h2 className="text-4xl font-black text-[#0a303a] mb-8 uppercase">
-        MY <span className="text-[#e83128]">ORDERS</span>
-      </h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-4xl font-black text-[#0a303a] mb-8 uppercase">
+          MY <span className="text-[#e83128]">ORDERS</span>
+        </h2>
+        <button
+          onClick={handlePDF}
+          className="btn bg-[#0a303a] text-white hover:bg-[#e83128] no-print border-none"
+        >
+          Download PDF
+        </button>
+      </div>
       <div className="bg-white shadow-xl rounded-2xl overflow-x-auto">
         <table className="w-full text-left border-collapse min-w-150">
           <thead className="bg-gray-50">
